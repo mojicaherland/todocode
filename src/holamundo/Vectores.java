@@ -19,7 +19,7 @@ public class Vectores {
 //        }
 
         int vector[] = new int[4];
-        cargarVectorRandom(vector);
+        System.out.println(promedioVector(vector));
     }
 
     //CARGA DATOS MANUALMENTE AL VECTOR Y LOS MUESTRA
@@ -38,5 +38,38 @@ public class Vectores {
             vector[i] = Matrices.retornaNumeroRandom(100, 1);
             System.out.println("Pos : " + i + "; Dato: " + vector[i]);
         }
+    }
+    // EJERCICIOS DE VECTORES
+
+    //1. Sumar los elementos del vector
+    public static int sumarElementosVector(int vectorSuma[]) {
+        cargarVectorRandom(vectorSuma);
+        int suma = 0;
+        for (int i = 0; i < vectorSuma.length; i++) {
+            suma = suma + vectorSuma[i];
+        }
+        return suma;
+    }
+
+    //2. determinar cuantos elementos pares hay en el vector
+    public static int elementosParesVector(int vector[]) {
+        cargarVectorRandom(vector);
+        int c = 0;
+        for (int i = 0; i < vector.length; i++) {
+            if (vector[i] % 2 == 0) {
+                c++;
+            }
+        }
+        return c;
+    }
+
+    //3. determinar el promedio de los elementos de un vector
+    public static float promedioVector(int vector[]) {
+        cargarVectorRandom(vector);
+        float suma = 0;
+        for (int i = 0; i < vector.length; i++) {
+            suma = suma + vector[i];
+        }
+        return suma/vector.length;
     }
 }
